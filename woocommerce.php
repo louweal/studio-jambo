@@ -6,6 +6,7 @@
  */
 
 get_header();
+
 ?>
 
 <main id="site-main" class="main">

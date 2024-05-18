@@ -12,19 +12,19 @@ module.exports = {
         filename: "./dist/[name].bundle.js",
         path: path.resolve(__dirname),
     },
-    resolve: {
-        fallback: {
-            http: false,
-            https: false,
-            url: false,
-            assert: false,
-            zlib: false,
-            crypto: false,
-            stream: false,
-            fs: false,
-            net: false,
-        },
-    },
+    // resolve: {
+    //     fallback: {
+    //         http: false,
+    //         https: false,
+    //         url: false,
+    //         assert: false,
+    //         zlib: false,
+    //         crypto: false,
+    //         stream: false,
+    //         fs: false,
+    //         net: false,
+    //     },
+    // },
     plugins: [
         new MiniCssExtractPlugin({
             filename: "./dist/[name].bundle.css",

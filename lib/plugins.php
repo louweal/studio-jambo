@@ -14,7 +14,7 @@
  * 
  * @since	1.0
  */
-// add_action( 'acf/init', 'acf_options_init' );
+add_action('acf/init', 'acf_options_init');
 function acf_options_init()
 {
 
