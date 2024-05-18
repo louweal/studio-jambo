@@ -23,10 +23,9 @@
     wp_body_open(); ?>
 
     <header id="site-header" class="header">
-        <div class="container">
-
-            <div class="header__logo">
-                <a class="logo logo--site" href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>" rel="home">
+        <div class="flex flex-row justify-between items-center w-full">
+            <div class="header__logo order-1 lg:order-0">
+                <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>" rel="home">
                     <picture>
                         <?php if (get_the_retina_logo()) { ?>
                             <source srcset="<?php the_logo(); ?> 1x, <?php the_retina_logo(); ?> 2x">
@@ -37,7 +36,7 @@
             </div>
 
             <?php if (has_nav_menu('menu-main')) { ?>
-                <div class="header__navigation" id="header-nav">
+                <div class="hidden lg:block lg:order-1">
                     <?php $nav_menu_args = array(
                         'theme_location'        => 'menu-main',
                         'container'             => 'nav',
@@ -50,14 +49,20 @@
                 </div>
             <?php } ?>
 
+            <?php if (is_active_sidebar('cart-widget')) { ?>
+                <div class="order-2">
+                    <?php dynamic_sidebar('cart-widget'); ?>
+                </div>
+            <?php } ?>
 
-            <div class="header__toggle">
+            <!-- <div class="header__toggle order-1">
                 <button id="menu-toggle" class="toggle js-toggle-menu" title="Toggle menu">
                     <span class="toggle__inner">
                         <span></span><span></span><span></span>
                     </span>
                 </button>
-            </div>
-
+            </div> -->
         </div>
+
+
     </header>

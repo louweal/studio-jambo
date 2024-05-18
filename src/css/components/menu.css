@@ -32,14 +32,11 @@
 
         a {
             color: var(--color-heading);
-            font-weight: 600;
-            font-size: 1.5rem;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
             text-decoration: none;
             transition: color 0.3s;
-
-            @media (--1024) {
-                font-size: 1rem;
-            }
 
             &:hover,
             &:active {
@@ -94,7 +91,7 @@
             height: initial;
         }
 
-        &[aria-expanded='true'] {
+        &[aria-expanded="true"] {
             transform: rotate(180deg);
 
             @media (--1024) {
