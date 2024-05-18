@@ -1,8 +1,37 @@
 .header {
     display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 12;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--header-height);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    padding: 0 1rem;
+    background-color: var(--color-light);
 
     .has-scrolled & {
         box-shadow: var(--shadow);
+    }
+
+    &__logo {
+        width: 130px;
+
+        @media (--lg) {
+            width: 170px;
+        }
+    }
+
+    h1 {
+        font-weight: 300;
+        font-family: var(--font-body);
     }
 
     &__toggle {

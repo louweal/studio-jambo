@@ -36,7 +36,7 @@
             </div>
 
             <?php if (has_nav_menu('menu-main')) { ?>
-                <div class="hidden lg:block lg:order-1">
+                <div class="hidden lg:block">
                     <?php $nav_menu_args = array(
                         'theme_location'        => 'menu-main',
                         'container'             => 'nav',
