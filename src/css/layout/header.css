@@ -1,0 +1,13 @@
+.header {
+    display: block;
+
+    .has-scrolled & {
+        box-shadow: var(--shadow);
+    }
+
+    &__toggle {
+        @media (--lg) {
+            display: none;
+        }
+    }
+}

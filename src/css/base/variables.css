@@ -1,0 +1,62 @@
+/* Custom media queries */
+@custom-media --480 (min-width: 30em);
+@custom-media --xs (min-width: 30em);
+@custom-media --640 (min-width: 40em);
+@custom-media --sm (min-width: 40em);
+@custom-media --768 (min-width: 48em);
+@custom-media --md (min-width: 48em);
+@custom-media --992 (min-width: 62em);
+@custom-media --1024 (min-width: 64em);
+@custom-media --lg (min-width: 64em);
+@custom-media --1280 (min-width: 80em);
+@custom-media --xl (min-width: 80em);
+@custom-media --1536 (min-width: 96em);
+@custom-media --2xl (min-width: 96em);
+@custom-media --1600 (min-width: 100em);
+@custom-media --3xl (min-width: 100em);
+
+/* Custom selectors */
+@custom-selector :--headings h1, h2, h3, h4, h5, h6;
+@custom-selector :--text p, span, a:not(.button), li, mark, sup, sub, blockquote, pre, code;
+
+/* Variables */
+:root {
+    /* Colors */
+    --color-light: #ffffff;
+    --color-dark: #000000;
+    --color-background: #f5f5f5;
+    --color-body: #808080;
+    --color-heading: #000000;
+    --color-primary: #00bdff;
+    --color-secondary: #0e4153;
+    --color-accent: #fbceb1;
+
+    /* Font families */
+    --font-heading: 'Poppins', Arial, sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+
+    /* Effects */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+    /* Sizes */
+    --container-width: 73.125rem;
+    --header-height: 4.25rem;
+    --hero-height: auto;
+    --hero-height-large: auto;
+
+    /* 64em */
+    @media (--1024) {
+        --header-height: 5rem;
+        --hero-height: 37.5rem;
+        --hero-height-large: 42.5rem;
+    }
+
+    /* 100em */
+    @media (--1600) {
+        --hero-height: 45rem;
+        --hero-height-large: 60rem;
+    }
+}

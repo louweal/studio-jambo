@@ -1,0 +1,8 @@
+.footer {
+    display: block;
+    padding: 3.125rem 0 2rem 0;
+
+    @media (--1024) {
+        padding: 6.25rem 0 2rem 0;
+    }
+}

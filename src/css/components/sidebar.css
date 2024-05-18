@@ -1,0 +1,15 @@
+.sidebar {
+    &--menu {
+        margin: 2rem 0 0 2rem;
+
+        @media (--1024) {
+            margin: 0;
+        }
+    }
+
+    ul {
+        display: flex;
+        list-style: none;
+        display: flex;
+    }
+}

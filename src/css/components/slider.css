@@ -1,0 +1,51 @@
+.slider {
+    opacity: 0;
+    width: 100%;
+
+    &--init {
+        opacity: 1;
+        transition-duration: 1s;
+        transition-delay: 0.5s;
+    }
+
+    &__wrapper {
+    }
+
+    &__slide {
+        height: auto;
+    }
+
+    &__pagination {
+        position: relative;
+        top: initial;
+        left: initial;
+        right: initial;
+        bottom: initial;
+        margin-top: 2rem;
+
+        span {
+            background-color: var(--color-dark);
+            transition: 0.3s;
+        }
+
+        span.swiper-pagination-bullet-active {
+            transform: scale(1.375);
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    &__button {
+        position: relative;
+        top: initial;
+        right: initial;
+        left: initial;
+        bottom: initial;
+        margin: 0;
+    }
+}

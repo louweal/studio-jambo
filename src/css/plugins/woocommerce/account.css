@@ -1,0 +1,37 @@
+.woocommerce-MyAccount-navigation {
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+
+        @media (--768) {
+            margin-right: 2rem;
+        }
+
+        li {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 0.75rem 0;
+
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+    }
+}
+
+.woocommerce {
+    .woocommerce-Input,
+    .input-text {
+        background-color: #f6f6f6;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.24rem;
+    }
+}
+
+.wp-block-woocommerce-customer-account {
+    padding: 0 !important;
+
+    svg {
+        padding: 0 !important;
+    }
+}

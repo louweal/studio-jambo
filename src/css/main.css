@@ -1,0 +1,35 @@
+/* Vendor */
+/* @import "../../node_modules/xxx/xxx.css"; */
+
+/* Base */
+@import "base/tailwind";
+@import "base/variables";
+@import "base/global";
+@import "base/text";
+@import "base/wordpress";
+
+/* Layout */
+@import "layout/header";
+@import "layout/footer";
+@import "layout/section";
+
+/* Components */
+@import "components/menu";
+@import "components/sidebar";
+@import "components/hero";
+@import "components/btn";
+@import "components/toggle";
+@import "components/editor";
+@import "components/card";
+@import "components/accordion";
+@import "components/slider";
+
+/* Plugins */
+@import "plugins/woocommerce";
+@import "plugins/woocommerce/sidebar";
+@import "plugins/woocommerce/pagination";
+@import "plugins/woocommerce/product";
+@import "plugins/woocommerce/shop";
+@import "plugins/woocommerce/cart";
+@import "plugins/woocommerce/account";
+@import "plugins/woocommerce/checkout";

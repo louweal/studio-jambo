@@ -1,0 +1,101 @@
+.woocommerce {
+    .woocommerce-pagination {
+        ul {
+            border: none !important;
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+
+            li {
+                border: none !important;
+                display: flex !important;
+                overflow: visible !important;
+
+                .page-numbers {
+                    color: transparent;
+                    position: relative;
+                    padding: 0 0.5rem;
+                    display: inline-block;
+                    min-width: 0 !important;
+
+                    &::after {
+                        content: '';
+                        display: block;
+                        height: 0.625rem;
+                        width: 0.625rem;
+                        background-color: #d8d8d8;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        transition: background 0.3s;
+                        border-radius: 0.25rem;
+                    }
+
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        background-color: transparent;
+                        color: transparent;
+
+                        &::after {
+                            background-color: var(--color-dark);
+                        }
+                    }
+
+                    &.current {
+                        color: transparent;
+                        background-color: transparent;
+
+                        &::after {
+                            height: 0.625rem;
+                            width: 0.625rem;
+                            background-color: var(--color-dark);
+                        }
+                    }
+
+                    &.next,
+                    &.prev {
+                        transition: transform 0.3s;
+
+                        &::after {
+                            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' fill='none'%3E%3Cpath stroke='%231A1A1A' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M19.5 12.33h-14M14.5 17.33l5-5M14.5 7.33l5 5'/%3E%3C/svg%3E");
+                            width: 1.5625rem;
+                            height: 1.5625rem;
+                            background-size: 100%;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            background-color: transparent;
+                        }
+
+                        &:hover,
+                        &:focus,
+                        &:active {
+                            transform: translateX(0.25rem);
+                        }
+                    }
+
+                    &.prev {
+                        &::after {
+                            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' fill='none'%3E%3Cpath stroke='%231A1A1A' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M5.5 12.33h14M10.5 17.33l-5-5M10.5 7.33l-5 5'/%3E%3C/svg%3E");
+                        }
+
+                        &:hover,
+                        &:focus,
+                        &:active {
+                            transform: translateX(-0.25rem);
+                        }
+                    }
+                }
+
+                &:has(.next) {
+                    transform: translateX(2.5rem);
+                }
+
+                &:has(.prev) {
+                    transform: translateX(-2.5rem);
+                }
+            }
+        }
+    }
+}

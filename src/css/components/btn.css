@@ -1,0 +1,37 @@
+.btn,
+.wp-block-button__link,
+.gform_button {
+    display: inline-flex !important;
+    align-items: center;
+    position: relative;
+    appearance: none;
+    outline: none;
+    text-decoration: none;
+    border: 0;
+    border-radius: 0;
+    padding: 0 1.25rem;
+    font-size: 0.875rem;
+    color: var(--color-light);
+    background-color: var(--color-primary);
+    white-space: nowrap;
+    cursor: pointer;
+    height: 2.75rem;
+    transition: box-shadow 0.3s;
+    font-weight: 700;
+    font-size: 0.875rem;
+    border-radius: 6px;
+
+    @media (--1024) {
+        padding: 0 1.5rem;
+        font-size: 1rem;
+    }
+
+    &:hover,
+    &:active {
+        box-shadow: var(--shadow-lg);
+    }
+
+    &--secondary {
+        background-color: var(--color-secondary);
+    }
+}
