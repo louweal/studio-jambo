@@ -9,12 +9,42 @@
 
 <footer id="site-footer" class="footer">
     <div class="container">
-        <div class="grid lg:grid-cols-4 gap-5">
-            <div>
-                Col 1
+        <div class="flex flex-col lg:grid lg:grid-cols-12 gap-5 pb-8">
+            <div class="col-span-6">
+                <h3>About us</h3>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam expedita, laudantium natus distinctio consequuntur quibusdam facere id nostrum exercitationem omnis aliquid, eos qui debitis voluptatibus nobis enim voluptatem porro quasi?</p>
+
             </div>
-            <div>Col 2</div>
+            <div class="lg:col-span-3">
+                <h3>Shop</h3>
+                <ul>
+                    <li>
+                        <a class=" social" href="https://www.instagram.com/studiojambo.nl">Instagram</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="lg:col-span-3">
+                <h3>Socials</h3>
+                <div class="editor">
+                    <ul>
+                        <li>
+                            <a class=" social" href="https://www.instagram.com/studiojambo.nl">Instagram</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
+    </div>
+    <div class="footer__bar">
+        <div class="container">
+            <div class="flex justify-between">
+                <p>Handmade with love © <?php echo date("Y"); ?> All rights reverved</p>
+                <div class="hidden lg:block">minipay</div>
+            </div>
+        </div>
+
     </div>
 </footer>
 
