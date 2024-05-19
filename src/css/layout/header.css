@@ -23,15 +23,15 @@
 
     &__logo {
         width: 130px;
+        transition: transform 0.4s cubic-bezier(0.19, 0, 0.22, 1);
 
         @media (--lg) {
             width: 170px;
         }
-    }
 
-    h1 {
-        font-weight: 300;
-        font-family: var(--font-body);
+        &:hover {
+            transform: scale(0.92);
+        }
     }
 
     &__toggle {

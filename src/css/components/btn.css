@@ -8,27 +8,28 @@
     outline: none;
     text-decoration: none;
     border: 0;
-    border-radius: 0;
-    padding: 0 1.25rem;
-    font-size: 0.875rem;
+    padding: 0 1.4rem;
     color: var(--color-light);
     background-color: var(--color-primary);
     white-space: nowrap;
     cursor: pointer;
     height: 2.75rem;
-    transition: box-shadow 0.3s;
+    transition:
+        background-color 0.3s,
+        color 0.3s;
     font-weight: 700;
-    font-size: 0.875rem;
-    border-radius: 6px;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: var(--font-heading);
 
     @media (--1024) {
-        padding: 0 1.5rem;
-        font-size: 1rem;
+        padding: 0 1.8rem;
     }
 
     &:hover,
     &:active {
-        box-shadow: var(--shadow-lg);
+        background-color: var(--color-secondary);
     }
 
     &--secondary {

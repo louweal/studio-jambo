@@ -33,5 +33,5 @@ function body_open_theme_templates()
 {
 
     // Splash loader screen
-    get_template_part('./template-parts/splash');
+    // get_template_part('./template-parts/splash');
 }

@@ -24,7 +24,7 @@
 
     <header id="site-header" class="header">
         <div class="flex flex-row justify-between items-center w-full">
-            <div class="header__logo order-1 lg:order-0">
+            <div class="header__logo">
                 <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>" rel="home">
                     <picture>
                         <?php if (get_the_retina_logo()) { ?>
@@ -50,9 +50,7 @@
             <?php } ?>
 
             <?php if (is_active_sidebar('cart-widget')) { ?>
-                <div class="order-2">
-                    <?php dynamic_sidebar('cart-widget'); ?>
-                </div>
+                <?php dynamic_sidebar('cart-widget'); ?>
             <?php } ?>
 
             <!-- <div class="header__toggle order-1">

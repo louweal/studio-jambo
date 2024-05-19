@@ -27,6 +27,10 @@
             }
         }
     }
+
+    &__badge {
+        all: unset;
+    }
 }
 
 /* .wp-block-woocommerce-mini-cart-title-block.wc-block-mini-cart__title {

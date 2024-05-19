@@ -10,7 +10,7 @@ get_header();
 ?>
 
 <main id="site-main" class="main">
-    <?php get_hero(); ?>
+    <?php get_hero('woocommerce'); ?>
 
     <?php if (is_singular('product')) { ?>
 
@@ -39,20 +39,14 @@ get_header();
                                 <div class="editor mb-[3.125rem] lg:max-w-[90%]">
 
                                 <?php } ?>
+
+
                                 <?php woocommerce_content(); ?>
 
                                 </div>
                         </div>
                     </div>
-                    <button class="btn btn--filter js-woo-toggle lg:hidden">
-                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" fill="none">
-                            <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.5 5h3M3.5 5h11M10.5 12h11M3.5 12h3M18.5 19h3M3.5 19h11M17.914 3.586a2 2 0 1 1-2.828 2.828 2 2 0 0 1 2.828-2.828M9.914 10.586a2 2 0 1 1-2.828 2.828 2 2 0 0 1 2.828-2.828M17.914 17.586a2 2 0 1 1-2.828 2.828 2 2 0 0 1 2.828-2.828" />
-                        </svg> -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24">
-                            <path stroke="#000" stroke-linecap="round" stroke-width="1.5" d="M4 5h6m0 0a2 2 0 1 0 4 0m-4 0a2 2 0 1 1 4 0m0 0h6M4 12h12m0 0a2 2 0 1 0 4 0 2 2 0 0 0-4 0Zm-8 7h12M8 19a2 2 0 1 0-4 0 2 2 0 0 0 4 0Z" />
-                        </svg>
-                        <span>Open filters</span>
-                    </button>
+
                 </div>
         </section>
 

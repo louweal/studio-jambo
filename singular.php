@@ -60,7 +60,13 @@ get_header();
 
             <?php } else { ?>
 
-                <?php get_hero(); ?>
+                <?php if (is_front_page()) { ?>
+                    <?php get_hero('home'); ?>
+
+                <?php } else { ?>
+                    <?php get_hero(); ?>
+                <?php } // else 
+                ?>
 
                 <?php if (!empty(get_the_content())) { ?>
                     <section class="section">

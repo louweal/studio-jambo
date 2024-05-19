@@ -131,7 +131,6 @@
             height: initial;
             overflow: initial;
             height: auto;
-            box-shadow: var(--shadow-md);
         }
     }
 
