@@ -7,6 +7,19 @@
         font-weight: 500;
     }
 
+    .woocommerce-input-wrapper {
+        select {
+            background-color: var(--color-background);
+            padding: 0.6rem 1rem;
+        }
+    }
+
+    .woocommerce-Input,
+    .input-text {
+        background-color: var(--color-background);
+        padding: 0.6rem 1rem;
+    }
+
     &__content {
         .page-title {
             display: none;

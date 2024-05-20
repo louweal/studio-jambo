@@ -1,8 +1,10 @@
 .btn,
 .wp-block-button__link,
-.gform_button {
-    display: inline-flex !important;
+.gform_button,
+.woocommerce button.button.alt {
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
     position: relative;
     appearance: none;
     outline: none;
@@ -22,6 +24,7 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     font-family: var(--font-heading);
+    border-radius: 0px;
 
     @media (--1024) {
         padding: 0 1.8rem;

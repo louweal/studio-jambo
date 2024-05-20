@@ -33,4 +33,4 @@
 @import "plugins/woocommerce/shop";
 @import "plugins/woocommerce/cart";
 @import "plugins/woocommerce/account";
-/* @import "plugins/woocommerce/checkout"; */
+@import "plugins/woocommerce/checkout";
