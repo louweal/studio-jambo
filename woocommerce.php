@@ -14,7 +14,7 @@ get_header();
 
     <?php if (is_singular('product')) { ?>
 
-        <section class="section woocommerce woocommerce--product" data-aos="fade-up-10">
+        <section class="section woocommerce woocommerce--product">
             <div class="container">
                 <div class="woocommerce__content">
                     <?php woocommerce_content(); ?>

@@ -4,14 +4,14 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-class WC_Gateway_MyCustom extends WC_Payment_Gateway
+class WC_Gateway_Minipay extends WC_Payment_Gateway
 {
     // private $log;
     // private $log_context;
 
     public function __construct()
     {
-        $this->id = 'mycustom';
+        $this->id = 'minipay';
         $this->icon = ''; // URL of the icon that will be displayed on the checkout page
         $this->has_fields = true;
         $this->method_title = 'MiniPay';
@@ -36,7 +36,7 @@ class WC_Gateway_MyCustom extends WC_Payment_Gateway
         // Other custom code
         // Enable logging for debugging
         // $this->log = wc_get_logger();
-        // $this->log_context = array('source' => 'mycustom');
+        // $this->log_context = array('source' => 'minipay');
     }
 
     // public function is_available()
@@ -90,6 +90,7 @@ class WC_Gateway_MyCustom extends WC_Payment_Gateway
             echo wpautop(wp_kses_post($this->description));
         }
         // You can also add custom payment fields here
+        echo '<button class="js-minipay-connect">Connect</button>';
     }
 
     public function validate_fields()
