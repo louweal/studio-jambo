@@ -2,7 +2,7 @@
 /*
 Plugin Name: MiniPay
 Description: MiniPay for WooCommerce.
-Version: 1.0
+Version: 1.0001
 Author: Anneloes Louwe
 */
 
@@ -14,15 +14,9 @@ if (!defined('ABSPATH')) {
 add_action('wp_enqueue_scripts', 'enqueue_minipay_script');
 function enqueue_minipay_script()
 {
-    if (is_page('checkout')) { // page slug
+    if (is_page(13)) { // page slug
         // Enqueue the script
-        // true is in footer, false is in header
-        $script_path = get_template_directory() . '/minipay.js'; // Adjust the path as needed
-        // $script_url = get_template_directory_uri() . '/minipay.js';
-        $version = filemtime($script_path);
-        error_log($version);
-
-        wp_enqueue_script('minipay-script', plugin_dir_url(__FILE__) . 'minipay.js', array(), $version, true);
+        wp_enqueue_script('minipay-script', plugin_dir_url(__FILE__) . 'dist/minipay.bundle.js', array(), time(), true);
     }
 }
 
@@ -35,6 +29,19 @@ function add_type_attribute($tag, $handle, $src)
     }
     return $tag;
 }
+
+function minipay_enqueue_styles()
+{
+    // Enqueue your CSS file
+    wp_enqueue_style(
+        'minipay-styles', // Handle
+        plugins_url('src/css/main.css', __FILE__), // Path to your CSS file
+        array(), // Dependencies
+        null, // Version number
+        'all' // Media type
+    );
+}
+add_action('wp_enqueue_scripts', 'minipay_enqueue_styles');
 
 add_action('plugins_loaded', 'init_minipay_gateway');
 function init_minipay_gateway()

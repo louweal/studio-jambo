@@ -50,7 +50,15 @@
             object-position: center;
         }
 
+        h4 {
+            /* category */
+            font-size: 0.875rem;
+            color: var(--color-primary);
+            margin-bottom: 0.3rem;
+        }
+
         h3 {
+            /* product title */
             position: relative;
             display: block;
             font-size: 0.875rem;
@@ -58,7 +66,7 @@
             padding-bottom: 1rem;
 
             &:after {
-                content: "";
+                content: '';
                 position: absolute;
                 bottom: 0;
                 left: 50%;

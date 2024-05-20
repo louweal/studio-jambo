@@ -70,6 +70,19 @@ class WC_Gateway_Minipay extends WC_Payment_Gateway
                 'description' => 'This controls the description which the user sees during checkout.',
                 'default' => 'Pay with MiniPay.',
             ),
+            'wallet' => array(
+                'title' => 'Celo Wallet Address',
+                'type' => 'text',
+                'description' => 'Your wallet address.',
+                'default' => '0x000000000',
+            ),
+            'split' => array(
+                'title' => 'Split',
+                'type' => 'checkbox',
+                'label' => 'Split the payment',
+                'default' => 'yes',
+                'description' => 'Split the payment and send it to multiple receivers, for example to donate a percentage directly to a good cause.',
+            ),
         );
     }
 
@@ -90,7 +103,7 @@ class WC_Gateway_Minipay extends WC_Payment_Gateway
             echo wpautop(wp_kses_post($this->description));
         }
         // You can also add custom payment fields here
-        echo '<button class="js-minipay-connect">Connect</button>';
+        echo '<div class="btn js-minipay-get-address">Get address</div>';
     }
 
     public function validate_fields()

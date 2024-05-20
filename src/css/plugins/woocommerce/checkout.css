@@ -41,12 +41,12 @@
         margin: 2rem 0;
     }
 
-    #payment ul.payment_methods li {
-        &.payment_method_minipay {
-            /* hide minipay by default, show when minipay is detected using javascript */
-            opacity: 0.4 !important;
-        }
+    .woocommerce-privacy-policy-text p {
+        font-size: 0.75rem;
+        padding-bottom: 1rem;
+    }
 
+    #payment ul.payment_methods li {
         label {
             font-family: var(--font-heading);
             letter-spacing: 1px;
@@ -64,7 +64,7 @@
             margin-bottom: 1rem;
 
             &:after {
-                content: "";
+                content: '';
                 position: absolute;
                 bottom: 0;
                 left: 50%;
