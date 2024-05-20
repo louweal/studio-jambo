@@ -38,7 +38,7 @@ if ($default) {
 
     <div class="container">
         <?php if ($items) { ?>
-            <div class="slider slider--products swiper js-slider<?php echo $margin; ?>" data-slider="products">
+            <div class="slider slider--products swiper js-slider" data-slider="products">
                 <div class="slider__wrapper swiper-wrapper">
                     <?php foreach ($items as $post) {
                         global $post; ?>

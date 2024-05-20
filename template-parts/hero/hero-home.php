@@ -14,7 +14,7 @@ $visuals = get_field('hero_visuals');
 
     <div class="container hero-home__content order-2 sm:order-1">
         <div class="row">
-            <div class="box sm:box-10 lg:box-9 z-20">
+            <div class="box sm:box-10 lg:box-8 z-20">
                 <h3 class="hero-home__label">Studio Jambo</h3>
                 <h1 class="hero-home__title"><?php echo $title; ?></h1>
                 <?php if ($link) { ?>

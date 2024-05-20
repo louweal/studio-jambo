@@ -6,11 +6,10 @@
     position: relative;
 
     &__header {
-        display: block;
-        min-width: 100%;
+        display: flex;
+        width: 100%;
         height: auto;
         aspect-ratio: 1/1;
-        object-fit: contain;
         background-color: var(--color-background);
         overflow: hidden;
     }
@@ -31,7 +30,6 @@
 
     &--product {
         .card__header {
-            min-width: 100%;
             height: auto;
             aspect-ratio: 1/1;
             margin-bottom: 0.8rem;
@@ -52,11 +50,12 @@
             object-position: center;
         }
 
-        :--headings {
+        h3 {
             position: relative;
             display: block;
             font-size: 0.875rem;
             margin-bottom: 1rem;
+            padding-bottom: 1rem;
 
             &:after {
                 content: "";
@@ -64,13 +63,15 @@
                 bottom: 0;
                 left: 50%;
                 transform: translateX(-50%);
-                width: 1.5rem;
+                width: 20%;
                 height: 1px;
                 background-color: var(--color-primary);
             }
         }
 
         .price {
+            font-style: italic;
+            opacity: 0.55;
         }
     }
 }

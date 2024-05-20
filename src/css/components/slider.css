@@ -99,18 +99,18 @@
             /* spaceBetween alternative, looks better on mobile */
             --padding: 30px;
             padding-left: var(--padding);
-            max-width: calc(353px + var(--padding));
+            min-width: calc(380px + var(--padding));
             &:last-child {
                 padding-right: var(--padding);
-                max-width: calc(353px + 2 * var(--padding));
+                max-width: calc(380px + 2 * var(--padding));
             }
 
             @media (--md) {
-                max-width: calc(322px + var(--padding));
+                min-width: calc(340px + var(--padding));
             }
 
             @media (--lg) {
-                max-width: none;
+                min-width: none;
                 padding-left: 0px;
                 padding-right: 0px;
                 &:last-child {

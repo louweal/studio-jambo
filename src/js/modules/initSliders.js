@@ -44,7 +44,7 @@ export const initSliders = () => {
                     wrapperClass: "slider__wrapper",
                     slideClass: "slider__slide",
                     breakpoints: {
-                        1200: {
+                        1400: {
                             slidesPerView: 3,
                             spaceBetween: 30,
                             allowTouchMove: false,

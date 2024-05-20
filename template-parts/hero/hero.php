@@ -8,27 +8,14 @@
 ?>
 
 <header class="hero">
-    <div class="grid lg:grid-cols-2 h-full">
-        <div class="order-2 lg:order-1">
-            <div class="hero__inner">
-                <h1><?php echo get_the_title($page_id); ?></h1>
-            </div>
-        </div>
 
-        <div class="order-1 lg:order-2 h-full overflow-hidden">
-            <?php if ($thumbnail_ml) { ?>
-                <picture class="">
-                    <source media="(min-width: 30em)" srcset="<?php echo $thumbnail_full; ?>">
-                    <img src="<?php the_post_thumbnail_url('medium_large'); ?>" alt="<?php echo $thumbnail_ml; ?>">
-                </picture>
-
-            <?php } ?>
-        </div>
-    </div>
 
 </header>
 
 <?php
+
+return;
+
 $args = array(
     'post_type'         => array('product'),
     'post_status'         => array('publish'),

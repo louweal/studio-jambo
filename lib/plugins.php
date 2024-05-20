@@ -31,28 +31,3 @@ function acf_options_init()
         ));
     }
 }
-
-
-/**
- * 
- * Add custom Block Editor Block
- * 
- */
-
-add_action('acf/init', 'custom_acf_blocks_init');
-function custom_acf_blocks_init()
-{
-
-    // Check function exists.
-    if (function_exists('acf_register_block_type')) {
-
-        // Register a testimonial block.
-        acf_register_block_type(array(
-            'name'              => 'block',
-            'title'             => 'Block',
-            'description'       => 'Editor Block',
-            'render_template'   => 'template-parts/block/block.php',
-            'category'          => 'common',
-        ));
-    }
-}

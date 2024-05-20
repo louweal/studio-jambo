@@ -19,7 +19,7 @@ module.exports = {
                 sm: "100%",
                 md: "100%",
                 lg: "100%",
-                xl: "71rem",
+                xl: "75rem",
             },
         },
         screens: {
