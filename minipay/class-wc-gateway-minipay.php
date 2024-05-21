@@ -67,8 +67,7 @@ class WC_Gateway_Minipay extends WC_Payment_Gateway
             'description' => array(
                 'title' => 'Description',
                 'type' => 'textarea',
-                'description' => 'This controls the description which the user sees during checkout.',
-                'default' => 'Pay with MiniPay.',
+                'default' => 'MiniPay is a super light, stablecoin-based, non-custodial wallet inside the Opera Mini browser that allows you to send and receive funds instantly using just a phone number.',
             ),
             'wallet' => array(
                 'title' => 'Celo Wallet Address',
@@ -103,7 +102,6 @@ class WC_Gateway_Minipay extends WC_Payment_Gateway
             echo wpautop(wp_kses_post($this->description));
         }
         // You can also add custom payment fields here
-        echo '<div class="btn js-minipay-get-address">Get address</div>';
     }
 
     public function validate_fields()

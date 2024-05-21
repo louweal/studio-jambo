@@ -14,7 +14,7 @@ if (!defined('ABSPATH')) {
 add_action('wp_enqueue_scripts', 'enqueue_minipay_script');
 function enqueue_minipay_script()
 {
-    if (is_page(13)) { // page slug
+    if (is_checkout()) { // page slug
         // Enqueue the script
         wp_enqueue_script('minipay-script', plugin_dir_url(__FILE__) . 'dist/minipay.bundle.js', array(), time(), true);
     }

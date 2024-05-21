@@ -23,14 +23,13 @@
 
     &__logo {
         width: 130px;
-        transition: transform 0.4s cubic-bezier(0.19, 0, 0.22, 1);
 
         @media (--lg) {
             width: 170px;
         }
 
         &:hover {
-            transform: scale(0.92);
+            animation: growShrink 0.45s cubic-bezier(0.19, 0, 0.22, 1) forwards;
         }
     }
 
@@ -38,5 +37,14 @@
         @media (--lg) {
             display: none;
         }
+    }
+}
+
+@keyframes growShrink {
+    70% {
+        transform: scale(0.96);
+    }
+    100% {
+        transform: scale(1);
     }
 }
