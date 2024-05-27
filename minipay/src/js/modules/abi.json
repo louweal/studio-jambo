@@ -1,0 +1,25 @@
+[
+    {
+        "inputs": [
+            {
+                "internalType": "address payable",
+                "name": "_address1",
+                "type": "address"
+            },
+            {
+                "internalType": "address payable",
+                "name": "_address2",
+                "type": "address"
+            },
+            {
+                "internalType": "uint8",
+                "name": "_percentage",
+                "type": "uint8"
+            }
+        ],
+        "name": "pay",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    }
+]

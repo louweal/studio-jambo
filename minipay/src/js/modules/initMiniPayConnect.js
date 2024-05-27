@@ -11,6 +11,7 @@ async function connect() {
     const checkoutBlock = document.querySelector(
         `div[data-block-name='woocommerce/classic-shortcode'][data-shortcode='checkout']`,
     );
+    if (!checkoutBlock) return;
 
     // Create a new minipay div
     var minipayDiv = document.createElement('div');

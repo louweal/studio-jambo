@@ -9,15 +9,22 @@ import { initMiniPayConnect } from './modules/initMinipayConnect.js';
     await initMiniPayConnect();
 
     const walletAddressEl = document.querySelector('.minipay-wallet-address');
-    let walletAddress = walletAddressEl.dataset.address;
 
-    //for debugging
-    walletAddress = '0xe64c095F97A09204E92Ad69e53362fE04ce12303';
-    console.log(walletAddress);
+    if (walletAddressEl) {
+        let walletAddress = walletAddressEl.dataset.address;
 
-    if (walletAddress.startsWith('0x')) {
-        await initMiniPayCheckBalance(walletAddress);
+        //for debugging
+        walletAddress = '0xe64c095F97A09204E92Ad69e53362fE04ce12303';
+        console.log(walletAddress);
+
+        if (walletAddress.startsWith('0x')) {
+            await initMiniPayCheckBalance(walletAddress);
+
+            initMiniPayTransaction();
+        } else {
+            console.log('minipay wallet not detected');
+        }
     } else {
-        console.log('minipay wallet not detected');
+        console.log('else');
     }
 })();

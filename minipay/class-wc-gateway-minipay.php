@@ -172,11 +172,17 @@ class WC_Gateway_Minipay extends WC_Payment_Gateway
         );
     }
 
-    public function receipt_page($order)
+    public function receipt_page($order_id)
     {
-        error_log('receipt_page method called.');
-        echo '<p>Thank you for your order, please click the button below to pay with MiniPay.<br></p>';
-        echo "<button class='btn minipay-pay'>Pay now</button>";
+        $order = wc_get_order($order_id);
+        if ($order) {
+            $order_total = $order->get_total();
+
+            echo '<p>Thank you for your order, please click the button below to pay with MiniPay.<br></p>';
+            echo "<p><button class='btn minipay-pay' data-total=" . $order_total . " data-address-1='" . $this->wallet1 . "' data-address-2='" . $this->wallet2 . "' data-percentage='" . $this->percentage . "'>Pay now - $" . $order_total . "</button></p>";
+        } else {
+            var_dump("Order not found.");
+        }
     }
 
     public function check_response()

@@ -6,6 +6,7 @@ const STABLE_TOKEN_ADDRESS = '0x874069fa1eb16d44d622f2e0ca25eea172369bc1';
 
 export const initMiniPayCheckBalance = async function initMiniPayCheckBalance(walletAddress) {
     const minipayDiv = document.querySelector(`div.minipay`);
+    if (!minipayDiv) return;
     // Create a new balance div
     var balanceDiv = document.createElement('div');
     balanceDiv.classList.add('minipay-balance');
