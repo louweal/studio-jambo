@@ -9,7 +9,9 @@
   "author": "Anneloes Louwe",
   "license": "ISC",
   "dependencies": {
-    "viem": "^2.11.0"
+    "@celo/abis": "^11.0.0",
+    "@celo/identity": "^5.1.2",
+    "viem": "^1.21.4"
   },
   "devDependencies": {
     "webpack": "^5.91.0",

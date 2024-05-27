@@ -4,10 +4,28 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+
+function shortWallet($address)
+{
+    $start = substr($address, 0, 6);
+    $end = substr($address, -5);
+    return $start . "....." . $end;
+}
+
+function inspectWallet($address)
+{
+    // return shortWallet($address);
+    return "<a href='https://alfajores.celoscan.io/address/" . $address . "' target='_blank'>" . shortWallet($address) . "</a>";
+}
+
 class WC_Gateway_Minipay extends WC_Payment_Gateway
 {
     // private $log;
     // private $log_context;
+
+    public $wallet1;
+    public $wallet2;
+    public $percentage;
 
     public function __construct()
     {
@@ -23,11 +41,14 @@ class WC_Gateway_Minipay extends WC_Payment_Gateway
 
         // Define user set variables
         $this->title = $this->get_option('title');
-        $this->description = $this->get_option('description');
+        // $this->description = $this->get_option('description');
+        $this->wallet1 = $this->get_option('wallet1');
+        $this->wallet2 = $this->get_option('wallet2');
+        $this->percentage = $this->get_option('percentage');
 
         // Actions
-        add_action('woocommerce_update_options_payment_gateways_' . $this->id, array($this, 'process_admin_options'));
         add_action('woocommerce_receipt_' . $this->id, array($this, 'receipt_page'));
+        add_action('woocommerce_update_options_payment_gateways_' . $this->id, array($this, 'process_admin_options'));
 
         // Payment listener/API hook
         add_action('woocommerce_api_wc_gateway_' . $this->id, array($this, 'check_response'));
@@ -60,27 +81,30 @@ class WC_Gateway_Minipay extends WC_Payment_Gateway
             'title' => array(
                 'title' => 'Title',
                 'type' => 'text',
-                'description' => 'This controls the title which the user sees during checkout.',
+                'description' => 'This is the title which the user sees during checkout.',
                 'default' => 'MiniPay',
-                'desc_tip' => true,
             ),
-            'description' => array(
-                'title' => 'Description',
-                'type' => 'textarea',
-                'default' => 'MiniPay is a super light, stablecoin-based, non-custodial wallet inside the Opera Mini browser that allows you to send and receive funds instantly using just a phone number.',
-            ),
-            'wallet' => array(
-                'title' => 'Celo Wallet Address',
+            // 'description' => array(
+            //     'title' => 'Description',
+            //     'type' => 'textarea',
+            //     'default' => 'Pay with <a href="https://docs.celo.org/developer/build-on-minipay/overview" target="_blank">MiniPay</a>.',
+            // ),
+            'wallet1' => array(
+                'title' => 'Receiver Wallet Address 1',
                 'type' => 'text',
-                'description' => 'Your wallet address.',
-                'default' => '0x000000000',
+                'description' => 'Celo Wallet Address of the main receiver.',
             ),
-            'split' => array(
-                'title' => 'Split',
-                'type' => 'checkbox',
-                'label' => 'Split the payment',
-                'default' => 'yes',
-                'description' => 'Split the payment and send it to multiple receivers, for example to donate a percentage directly to a good cause.',
+            'wallet2' => array(
+                'title' => 'Receiver Wallet Address 2',
+                'type' => 'text',
+                'description' => 'Celo Wallet Address of the second receiver. For example the wallet address of a good cause.',
+
+            ),
+            'percentage' => array(
+                'title' => 'Percentage to main receiver',
+                'type' => 'text',
+                'description' => 'Set the percentage of each payment that goes to the main receiver. The remaining percentage goes to the second receiver.',
+                'default' => '80',
             ),
         );
     }
@@ -88,7 +112,8 @@ class WC_Gateway_Minipay extends WC_Payment_Gateway
     public function admin_options()
     {
         echo '<h2>' . esc_html($this->get_method_title()) . '</h2>';
-        echo wp_kses_post(wpautop($this->get_method_description()));
+        // echo wp_kses_post(wpautop($this->get_method_description()));
+        // echo '<p>' . esc_html($this->get_method_wallet1()) . '</p>';
         echo '<table class="form-table">';
         $this->generate_settings_html();
         echo '</table>';
@@ -96,13 +121,26 @@ class WC_Gateway_Minipay extends WC_Payment_Gateway
 
     public function payment_fields()
     {
-        // $this->log->info('set payment fields...', $this->log_context);
+        // if ($this->description) {
+        //     echo wpautop(wp_kses_post($this->description));
+        // }
+        echo wpautop("Make sure you are using Opera Mini Beta with <a href='https://docs.celo.org/developer/build-on-minipay/overview' target='_blank'>MiniPay</a> and have enough cUSD in your MiniPay wallet to use this payment method.");
 
-        if ($this->description) {
-            echo wpautop(wp_kses_post($this->description));
+        echo "<br>Receiver(s):<br>";
+        if (isset($this->percentage) && !empty($this->percentage)) {
+            $percentage1 = (int)$this->percentage;
+            $percentage2 = (100 - $percentage1);
         }
-        // You can also add custom payment fields here
+
+        if (isset($this->percentage) && !empty($this->percentage) && isset($this->wallet1) && !empty($this->wallet1)) {
+            echo wpautop(inspectWallet($this->wallet1) . " - " . $percentage1 . "%");
+        }
+        if (isset($this->percentage) && !empty($this->percentage) && isset($this->wallet2) && !empty($this->wallet2)) {
+            echo wpautop(inspectWallet($this->wallet2) . " - " . $percentage2 . "%");
+        }
     }
+
+
 
     public function validate_fields()
     {
@@ -112,34 +150,38 @@ class WC_Gateway_Minipay extends WC_Payment_Gateway
 
     public function process_payment($order_id)
     {
-        // $this->log->info('Processing payment...', $this->log_context);
-
         $order = wc_get_order($order_id);
+        // Mark as pending payment (allowing the customer to pay).
+        $order->update_status('pending', __('Awaiting MiniPay payment', 'woocommerce'));
 
-        // Mark as on-hold (we're awaiting the payment)
-        $order->update_status('on-hold', __('Awaiting payment', 'my-custom-gateway'));
-
-        // Reduce stock levels
-        wc_reduce_stock_levels($order_id);
+        // wc_reduce_stock_levels($order_id);
 
         // Remove cart
-        WC()->cart->empty_cart();
+        // WC()->cart->empty_cart();
 
         // Return thankyou redirect
+        // return array(
+        //     'result' => 'success',
+        //     'redirect' => $this->get_return_url($order)
+        // );
+
+        // Return thank you page redirect.
         return array(
-            'result' => 'success',
-            'redirect' => $this->get_return_url($order)
+            'result'   => 'success',
+            'redirect' => $order->get_checkout_payment_url(true),
         );
     }
 
     public function receipt_page($order)
     {
-        echo '<p>' . __('Thank you for your order, please click the button below to pay with MiniPay.', 'my-custom-gateway') . '</p>';
-        // Custom payment form can be added here
+        error_log('receipt_page method called.');
+        echo '<p>Thank you for your order, please click the button below to pay with MiniPay.<br></p>';
+        echo "<button class='btn minipay-pay'>Pay now</button>";
     }
 
     public function check_response()
     {
         // Handle the payment response
+        // echo "Handle response";
     }
 }
