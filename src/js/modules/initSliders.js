@@ -1,48 +1,48 @@
-import Swiper, { Navigation, Pagination, Autoplay, EffectFade } from "swiper";
+import Swiper, { Navigation, Pagination, Autoplay, EffectFade } from 'swiper';
 
 export const initSliders = () => {
     // Check if Swiper is loaded in
     if (!Swiper) return false;
 
     // Get all sliders
-    const sliders = document.querySelectorAll(".js-slider");
+    const sliders = document.querySelectorAll('.js-slider');
 
     if (sliders) {
         [...sliders].forEach((slider) => {
-            const type = slider.hasAttribute("data-slider") ? slider.getAttribute("data-slider") : "default";
+            const type = slider.hasAttribute('data-slider') ? slider.getAttribute('data-slider') : 'default';
 
             const options = {
                 home: {
                     modules: [Autoplay, EffectFade],
-                    direction: "horizontal",
-                    effect: "slide",
-                    slidesPerView: "auto",
+                    direction: 'horizontal',
+                    effect: 'slide',
+                    slidesPerView: 'auto',
                     spaceBetween: 0,
                     speed: 2000,
                     touchReleaseOnEdges: true,
-                    wrapperClass: "slider__wrapper",
-                    slideClass: "slider__slide",
+                    wrapperClass: 'slider__wrapper',
+                    slideClass: 'slider__slide',
                     loop: true,
                     autoplay: {
                         delay: 4000,
                     },
                     on: {
                         init: function () {
-                            slider.classList.add("slider--init");
+                            slider.classList.add('slider--init');
                         },
                     },
                 },
 
                 products: {
-                    direction: "horizontal",
-                    effect: "slide",
-                    slidesPerView: "auto",
-                    spaceBetween: 0,
+                    direction: 'horizontal',
+                    effect: 'slide',
+                    slidesPerView: 'auto',
+                    spaceBetween: 20,
                     speed: 2000,
                     touchReleaseOnEdges: true,
                     watchSlidesProgress: true,
-                    wrapperClass: "slider__wrapper",
-                    slideClass: "slider__slide",
+                    wrapperClass: 'slider__wrapper',
+                    slideClass: 'slider__slide',
                     breakpoints: {
                         1400: {
                             slidesPerView: 3,
@@ -52,7 +52,7 @@ export const initSliders = () => {
                     },
                     on: {
                         init: function () {
-                            slider.classList.add("slider--init");
+                            slider.classList.add('slider--init');
                         },
                     },
                 },

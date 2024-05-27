@@ -1,7 +1,7 @@
 .footer {
     display: block;
     background-color: #3d3d3d;
-    color: #999;
+    color: #a6a6a6;
     padding-top: 2.5rem;
 
     @media (--lg) {
@@ -15,7 +15,7 @@
         font-size: 0.875rem;
 
         &:after {
-            content: "";
+            content: '';
             position: absolute;
             bottom: 1rem;
             left: 0;

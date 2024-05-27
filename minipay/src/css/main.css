@@ -1,7 +1,0 @@
-/* pure css only! */
-
-/* hide minipay by default, show when minipay is detected using javascript */
-
-.woocommerce-checkout #payment ul.payment_methods li &.payment_method_minipay {
-    opacity: 0.4 !important;
-}

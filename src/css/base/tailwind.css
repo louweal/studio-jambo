@@ -124,4 +124,17 @@
     .offset-12 {
         margin-left: 100%;
     }
+
+    .aspect-3x1 {
+        aspect-ratio: 3/1;
+    }
+    .aspect-2x1 {
+        aspect-ratio: 2/1;
+    }
+
+    .font-heading {
+        font-family: var(--font-heading);
+        font-weight: bold;
+        font-size: 0.75rem;
+    }
 }

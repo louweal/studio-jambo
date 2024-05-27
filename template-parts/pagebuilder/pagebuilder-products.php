@@ -17,26 +17,21 @@ if ($default) {
 
 ?>
 
-<section class="section section--overflow-h section--products" data-aos="fade-up-10">
+<section class="section section--overflow-h section--products" data-aos="fade-up-10" id="products">
     <div class="container">
-        <div class="grid grid-cols-12 mb-6">
-            <div class="col-span-12 lg:col-span-8">
-                <?php if ($editor) { ?>
-                    <div class="section__title">
-                        <?php echo $editor; ?>
-                    </div>
-                <?php } ?>
-            </div>
-
-            <?php if ($button) { ?>
-                <div class="col-span-12 lg:col-span-4 text-right">
-                    <?php the_link($button, 'btn btn--dark'); ?>
+        <div class="flex justify-center pb-8">
+            <?php if ($editor) { ?>
+                <div class="section__title">
+                    <?php echo $editor; ?>
                 </div>
             <?php } ?>
+
+
         </div>
     </div>
 
-    <div class="container">
+    <div class="lg:container">
+
         <?php if ($items) { ?>
             <div class="slider slider--products swiper js-slider" data-slider="products">
                 <div class="slider__wrapper swiper-wrapper">
@@ -52,7 +47,7 @@ if ($default) {
         <?php } ?>
 
         <?php if ($button) { ?>
-            <div class="lg:hidden">
+            <div class="flex justify-center pt-5">
                 <?php the_link($button, 'btn btn--dark'); ?>
             </div>
         <?php } ?>

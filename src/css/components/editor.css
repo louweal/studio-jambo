@@ -49,4 +49,16 @@
             color: var(--color-light);
         }
     }
+
+    &--footer {
+        color: #a6a6a6;
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        a {
+            color: #a6a6a6;
+        }
+    }
 }

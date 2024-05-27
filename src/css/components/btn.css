@@ -1,7 +1,10 @@
 .btn,
 .wp-block-button__link,
 .gform_button,
-.woocommerce button.button.alt {
+.woocommerce button.button.alt,
+.wc-block-cart__submit-button,
+.wp-block-woocommerce-mini-cart-cart-button-block.wc-block-mini-cart__footer-cart.outlined,
+.wp-block-woocommerce-mini-cart-checkout-button-block.wc-block-mini-cart__footer-checkout {
     display: inline-flex;
     align-items: center;
     justify-content: center;

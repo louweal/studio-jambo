@@ -5,6 +5,7 @@
  * Description:			Woocommerce hero template
  */
 
+return;
 $shop_id = wc_get_page_id('shop');
 ?>
 

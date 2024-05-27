@@ -35,7 +35,7 @@ if ($product_cats && !is_wp_error($product_cats)) {
                 <h4><?php echo $category; ?></h4>
                 <h3><?php the_title(); ?></h3>
                 <span class="price">
-                    € <?php echo $price; ?>
+                    $ <?php echo $price; ?>
                 </span>
             </div>
         </div>

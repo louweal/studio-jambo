@@ -77,3 +77,40 @@
         }
     }
 }
+
+.woocommerce-checkout #payment ul.payment_methods li.payment_method_minipay .payment_method_minipay a {
+    text-decoration: underline !important;
+}
+
+.minipay {
+    background-color: #f5f5f5;
+    padding: 0.92rem;
+    font-size: 0.8rem;
+
+    :--headings {
+        position: relative;
+        padding-bottom: 0.8rem;
+        margin-bottom: 1rem;
+        font-size: 0.875rem;
+        text-align: center;
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1.5rem;
+            height: 1px;
+            background-color: var(--color-primary);
+        }
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    > div {
+        text-align: center;
+    }
+}
