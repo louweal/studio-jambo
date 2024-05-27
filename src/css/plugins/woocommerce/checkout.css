@@ -114,3 +114,13 @@
         text-align: center;
     }
 }
+
+div[data-shortcode='checkout'] {
+    ul {
+        display: none !important;
+    }
+
+    p {
+        text-align: center !important;
+    }
+}

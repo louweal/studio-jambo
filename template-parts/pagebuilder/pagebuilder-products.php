@@ -5,19 +5,19 @@
  * Description:			Products Pagebuilder Layout
  */
 $default = get_sub_field('products_default');
-if ($default) {
+if ($default || $args['default'] == true) {
     $editor = get_field('products_editor', 'options');
-    $button = get_field('products_button', 'options');
+    // $button = get_field('products_button', 'options');
     $items = get_field('products_relationship', 'options');
 } else {
     $editor = get_sub_field('products_editor');
-    $button = get_sub_field('products_button');
+    // $button = get_sub_field('products_button');
     $items = get_sub_field('products_relationship');
 }
 
 ?>
 
-<section class="section section--overflow-h section--products" data-aos="fade-up-10" id="products">
+<section class="section section--products" xxxdata-aos="fade-up-10" id="products">
     <div class="container">
         <div class="flex justify-center pb-8">
             <?php if ($editor) { ?>
@@ -46,10 +46,6 @@ if ($default) {
             </div>
         <?php } ?>
 
-        <?php if ($button) { ?>
-            <div class="flex justify-center pt-5">
-                <?php the_link($button, 'btn btn--dark'); ?>
-            </div>
-        <?php } ?>
+
     </div>
 </section>

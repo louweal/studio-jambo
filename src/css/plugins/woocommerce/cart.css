@@ -9,11 +9,11 @@
         letter-spacing: 1px;
 
         &::before {
-            content: "Cart(";
+            content: 'Cart(';
         }
 
         &:after {
-            content: ")";
+            content: ')';
         }
 
         svg {
@@ -33,45 +33,10 @@
     }
 }
 
-/* .wp-block-woocommerce-mini-cart-title-block.wc-block-mini-cart__title {
-    font-size: 1.5rem;
-} */
+h2.wc-block-mini-cart__title {
+    font-size: 1rem !important;
 
-/* .wp-block-woocommerce-mini-cart {
-    button {
-        padding: 0;
+    span:first-child {
+        margin-right: auto;
     }
-} */
-
-/* .wc-block-mini-cart__empty-cart-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-
-    strong {
-        font-weight: 400;
-    }
-} */
-
-/* .woocommerce {
-    &-cart {
-        .wp-block-woocommerce-empty-cart-block .wc-block-product-new,
-        .wp-block-woocommerce-empty-cart-block hr,
-        .wp-block-woocommerce-empty-cart-block h2 {
-            display: none;
-        }
-
-        .wp-block-woocommerce-empty-cart-block h2:first-child {
-            display: block;
-        }
-    }
-} */
-
-/* .wp-block-woocommerce-cart {
-    .wc-block-cart-item__image {
-        img {
-            background-color: #fffaf7;
-            border-radius: 0.25rem;
-        }
-    }
-} */
+}

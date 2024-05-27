@@ -21,6 +21,11 @@ get_header();
                 </div>
             </div>
         </section>
+
+        <?php
+        get_template_part('./template-parts/pagebuilder/pagebuilder', 'products', array("default" => true));
+        ?>
+
     <?php } else if (is_product_category() || is_shop()) { ?>
 
         <section class="section section--woocommerce woocommerce woocommerce--shop">

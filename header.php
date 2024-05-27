@@ -35,6 +35,10 @@
                 </a>
             </div>
 
+            <div>
+                <a href="/mijn-account/">Sign in</a>
+            </div>
+
             <?php if (has_nav_menu('menu-main')) { ?>
                 <div class="hidden lg:block">
                     <?php $nav_menu_args = array(
