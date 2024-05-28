@@ -1,13 +1,13 @@
 // Import modules.
-import { initMenuToggle } from "./modules/initMenuToggle";
-import { initScrollClass } from "./modules/initScrollClass";
-import { initSliders } from "./modules/initSliders";
-import { initSubmenuToggle } from "./modules/initSubmenuToggle";
-import AOS from "aos";
+import { initMenuToggle } from './modules/initMenuToggle';
+import { initScrollClass } from './modules/initScrollClass';
+import { initSliders } from './modules/initSliders';
+import { initSubmenuToggle } from './modules/initSubmenuToggle';
+import AOS from 'aos';
 
 // Main thread
 (function () {
-    "use strict";
+    'use strict';
 
     // Use modules
     initMenuToggle();
@@ -19,6 +19,6 @@ import AOS from "aos";
         duration: 600,
         once: true,
         offset: 0,
-        easing: "ease-in-out-cubic",
+        easing: 'ease-in-out-cubic',
     });
 })();

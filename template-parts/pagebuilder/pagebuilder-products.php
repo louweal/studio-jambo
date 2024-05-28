@@ -5,7 +5,7 @@
  * Description:			Products Pagebuilder Layout
  */
 $default = get_sub_field('products_default');
-if ($default || $args['default'] == true) {
+if ($default || array_key_exists('default', $args)) {
     $editor = get_field('products_editor', 'options');
     // $button = get_field('products_button', 'options');
     $items = get_field('products_relationship', 'options');

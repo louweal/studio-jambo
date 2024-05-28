@@ -14,7 +14,15 @@
 
     <?php
     wp_head(); ?>
-
+    <script type="text/javascript" src="https://cloudfront.loggly.com/js/loggly.tracker-2.2.4.min.js" async></script>
+    <script>
+        var _LTracker = _LTracker || [];
+        _LTracker.push({
+            'logglyKey': 'ede83e6b-b945-485c-8641-8e773fc077f5',
+            'sendConsoleErrors': true,
+            'tag': 'loggly-jslogger',
+        });
+    </script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -33,6 +41,10 @@
                         <img alt="<?php bloginfo('name'); ?>" src="<?php the_logo(); ?>">
                     </picture>
                 </a>
+            </div>
+
+            <div>
+                <a href="/checkout/">Checkout</a>
             </div>
 
             <div>
